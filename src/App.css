@@ -1,0 +1,42 @@
+:root {
+  --color-E6E9F0: #E6E9F0;
+  --color-407899: #407899;
+}
+
+.section-why-us {
+  background-image: url('./assets/images/body/bgsection.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section-product-banner {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg-E6E9F0 {
+  background-color: var(--color-E6E9F0) !important;
+}
+
+.bg-407899 {
+  background-color: var(--color-407899) !important;
+}
+
+.text-blue {
+  color: var(--color-407899) !important;
+}
+
+input::placeholder {
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.me-pt-5 {
+  padding-top: 10rem !important;
+}
