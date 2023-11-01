@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 
 function ProductCart({ car, productName, productDescription, productPrice }) {
   return (
-    <div className="col-md-8 col-lg-4">
-      <div className="card bg-light shadow-sm border-0">
+    <div className="col-md-12 col-lg-4">
+      <div className="card bg-light shadow-sm border-0 h-100">
         <div className="card-body mw-100">
-          <div className="d-flex flex-wrap align-items-start gap-3">
-            <div className="bg-white shadow-sm rounded-2 p-1">
+          <div className="row d-flex">
+            <div className="d-flex align-items-center justify-content-center col-4 col-lg-3 bg-white shadow-sm rounded-2 p-1">
               <motion.div whileHover={{ scale: 0.9 }} whileTap={{ scale: 0.7 }}>
                 <Link to="/viewproduct">
                   <img src={car} alt={car} className="img-fluid" />
                 </Link>
               </motion.div>
             </div>
-            <div className="mw-100">
+            <div className="col-8 col-lg-9 mw-100">
               <div className="d-flex flex-nowrap justify-content-between align-items-start">
                 <h5>
                   <Link
@@ -34,7 +34,7 @@ function ProductCart({ car, productName, productDescription, productPrice }) {
                 </motion.div>
               </div>
               <p
-                className="text-truncate text-break m-0 p-0"
+                className="text-break m-0 p-0"
                 title={productDescription}
               >
                 {productDescription}

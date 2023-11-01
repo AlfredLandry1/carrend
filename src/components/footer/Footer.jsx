@@ -105,6 +105,12 @@ function Footer() {
               </div>
             </div>
           </div>
+          <div className="container">
+            <div className="p-4 rounded-top-5 bg-light text-center">
+              &copy; Copytight CARRENT (Groupe 3), all rights and privillege are
+              reserved.
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,7 +7,7 @@ import car1 from "../assets/images/products/cart/cartCar1.png";
 import car2 from "../assets/images/products/cart/cartCar2.png";
 import car3 from "../assets/images/products/cart/cartCar3.png";
 import car4 from "../assets/images/products/cart/cartCar4.png";
-import car5 from "../assets/images/products/cart/cartCar5.png";
+// import car5 from "../assets/images/products/cart/cartCar5.png";
 
 function Cart() {
   return (
@@ -24,13 +24,13 @@ function Cart() {
                 className="text-black text-truncate"
                 title="Your product(s) list 05"
               >
-                Your product(s) list <code className="fs-4 ms-3">05</code>
+                Your product(s) list <code className="fs-4 ms-3">04</code>
               </h2>
               <h5 className="fw-normal text-truncate" title="View all products">
                 x xxx xxx xxx FCFA
               </h5>
             </div>
-            <div className="row gap-3">
+            <div className="row d-flex gap-3">
               <ProductCart
                 car={car1}
                 productName="Ferrari"
