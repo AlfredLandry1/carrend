@@ -56,8 +56,8 @@ function Catalogs() {
               <div>
                 <h3 className="fw-bold text-black">View the products</h3>
                 <div className="pt-3 pb-5">
-                  <div className="row d-flex g-4">
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                  <div className="row d-flex justify-content-center justify-content-lg-start g-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product1}
                         productName="Toyota Corolla"
@@ -66,7 +66,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product2}
                         productName="Mercedes AMG"
@@ -75,14 +75,14 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product3}
                         productName="BMW"
                         productPrice="6 000 000 000 FCFA"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product4}
                         productName="Vont Va Gen"
@@ -91,7 +91,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product5}
                         productName="Vont Va Gen"
@@ -100,7 +100,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product6}
                         productName="Vont Va Gen"
@@ -109,7 +109,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product7}
                         productName="Vont Va Gen"
@@ -118,7 +118,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleProductCard
                         productImg={product8}
                         productName="Vont Va Gen"
@@ -133,8 +133,8 @@ function Catalogs() {
               <div className="my-5">
                 <h3 className="fw-bold text-black">Most loved product</h3>
                 <div className="pt-3 pb-5">
-                  <div className="row d-flex g-4">
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                  <div className="row d-flex justify-content-center justify-content-lg-start g-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product1}
                         productName="Toyota Corolla"
@@ -144,7 +144,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product2}
                         productName="Mercedes AMG"
@@ -154,7 +154,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product3}
                         productName="BMW"
@@ -162,7 +162,7 @@ function Catalogs() {
                         productPrice="6 000 000 000 FCFA"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product4}
                         productName="Vont Va Gen"
@@ -172,7 +172,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product5}
                         productName="Vont Va Gen"
@@ -182,7 +182,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product6}
                         productName="Vont Va Gen"
@@ -198,8 +198,8 @@ function Catalogs() {
               <div className="my-5">
                 <h3 className="fw-bold text-black">Products in promotion</h3>
                 <div className="pt-3 pb-5">
-                  <div className="row d-flex g-4">
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                  <div className="row d-flex justify-content-center justify-content-lg-start g-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product1}
                         productName="Toyota Corolla"
@@ -209,7 +209,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product2}
                         productName="Mercedes AMG"
@@ -219,7 +219,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product4}
                         productName="Vont Va Gen"
@@ -229,7 +229,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product5}
                         productName="Vont Va Gen"
@@ -239,7 +239,7 @@ function Catalogs() {
                         reducePercent="50% off"
                       />
                     </div>
-                    <div className="col-12 col-sm-9 col-md-8 col-lg-4">
+                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
                       <SimpleLovedProductCard
                         productImg={product6}
                         productName="Vont Va Gen"
