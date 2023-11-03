@@ -1,7 +1,6 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { motion } from "framer-motion";
+import axios from "axios";
 
 import bannerCar from "../assets/images/banner/car1.png";
 import Navbar from "../components/header/Navbar";
@@ -11,6 +10,7 @@ import SimpleProductCard from "../components/body/SimpleProductCard";
 import Comment from "../components/body/Comment";
 import Newsletter from "../components/body/Newsletter";
 import Footer from "../components/footer/Footer";
+import Car from "../apis/CarsDescription";
 
 import product1 from "../assets/images/products/product1.png";
 import product2 from "../assets/images/products/product2.png";
@@ -31,6 +31,33 @@ import newsletterCar from "../assets/images/body/newsletterCar.png";
 import newsletterMap from "../assets/images/body/newsletterMap.png";
 
 function Home() {
+  const [images, setImages] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // Fonction qui fait une requête HTTP vers le serveur React
+  const getImages = async () => {
+    try {
+      // Fait la requête HTTP
+      const response = await axios.get("localhost:3000/src/assets/images/products");
+
+      // Si la requête a réussi
+      if (response.status === 200) {
+        // Récupère le corps de la réponse
+        const body = response.data;
+
+        // Ajoute les images à la liste des images
+        setImages(body.images);
+      }
+    } catch (error) {
+      // Gère l'erreur
+      setErrorMessage("Une erreur est survenue lors du chargement des images.");
+    }
+  };
+
+  // Initialise la liste des images
+  getImages();
+
+
   return (
     <>
       <header className="bg-white min-vh-100 mh-100">
@@ -74,6 +101,17 @@ function Home() {
               </h6>
             </div>
             <div className="row d-flex g-4">
+              {Car.map((car) => (
+                <div className="col-12 col-sm-9 col-md-5 col-lg-3">
+                  <SimpleProductCard
+                    productImg={car.directory}
+                    productName={car.name}
+                    productThroughPrice={car.price_cfa}
+                    productPrice="6 000 000 000 FCFA"
+                    reducePercent="50% off"
+                  />
+                </div>
+              ))}
               <div className="col-12 col-sm-9 col-md-5 col-lg-3">
                 <SimpleProductCard
                   productImg={product1}

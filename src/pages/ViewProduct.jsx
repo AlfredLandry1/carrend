@@ -164,7 +164,9 @@ function ViewProduct() {
                       <div>
                         <div className="d-flex flex-nowrap align-items-center gap-2">
                           <p className="text-black fw-bold">Engine :</p>
-                          <p className="text-truncate">Ferrari 408 GTB</p>
+                          <p className="text-truncate">
+                            V8 biturbo de 3,9 litres
+                          </p>
                         </div>
                         <div className="d-flex flex-nowrap align-items-center gap-2">
                           <p className="text-black fw-bold">Transmition :</p>
@@ -199,22 +201,24 @@ function ViewProduct() {
                       </h3>
                       <div>
                         <div className="d-flex flex-nowrap align-items-center gap-2">
-                          <p className="text-black fw-bold">Engine :</p>
-                          <p className="text-truncate">Ferrari 408 GTB</p>
+                          <p className="text-black fw-bold">Dimension :</p>
+                          <p className="text-truncate">
+                            4,57 m x 1,96 m x 1,21 m
+                          </p>
                         </div>
                         <div className="d-flex flex-nowrap align-items-center gap-2">
-                          <p className="text-black fw-bold">Transmition :</p>
-                          <p className="text-truncate">7-speed automatic</p>
+                          <p className="text-black fw-bold">Weight :</p>
+                          <p className="text-truncate">1475 kg</p>
                         </div>
                         <div className="d-flex flex-nowrap align-items-center gap-2">
                           <p className="text-black fw-bold text-truncate">
-                            Performance :
+                            Engine consommation :
                           </p>
                           <p
                             className="text-break text-truncate"
                             title="0-100 km/h in 3.0 seconds, top speed 330 km/h"
                           >
-                            0-100 km/h in 3.0 seconds, top speed 330 km/h
+                            11,8 l/100 km
                           </p>
                         </div>
                         <div className="d-flex flex-nowrap align-items-center gap-2">
