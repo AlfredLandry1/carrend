@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 import bannerCar from "../assets/images/banner/car1.png";
 import Navbar from "../components/header/Navbar";
@@ -12,15 +11,6 @@ import Newsletter from "../components/body/Newsletter";
 import Footer from "../components/footer/Footer";
 import Car from "../apis/CarsDescription";
 
-import product1 from "../assets/images/products/product1.png";
-import product2 from "../assets/images/products/product2.png";
-import product3 from "../assets/images/products/product3.png";
-import product4 from "../assets/images/products/product4.png";
-import product5 from "../assets/images/products/product5.png";
-import product6 from "../assets/images/products/product6.png";
-import product7 from "../assets/images/products/product7.png";
-import product8 from "../assets/images/products/product8.png";
-
 import ressource from "../assets/images/body/ressource.png";
 
 import user1 from "../assets/images/users/user1.png";
@@ -31,33 +21,6 @@ import newsletterCar from "../assets/images/body/newsletterCar.png";
 import newsletterMap from "../assets/images/body/newsletterMap.png";
 
 function Home() {
-  const [images, setImages] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  // Fonction qui fait une requête HTTP vers le serveur React
-  const getImages = async () => {
-    try {
-      // Fait la requête HTTP
-      const response = await axios.get("localhost:3000/src/assets/images/products");
-
-      // Si la requête a réussi
-      if (response.status === 200) {
-        // Récupère le corps de la réponse
-        const body = response.data;
-
-        // Ajoute les images à la liste des images
-        setImages(body.images);
-      }
-    } catch (error) {
-      // Gère l'erreur
-      setErrorMessage("Une erreur est survenue lors du chargement des images.");
-    }
-  };
-
-  // Initialise la liste des images
-  getImages();
-
-
   return (
     <>
       <header className="bg-white min-vh-100 mh-100">
@@ -104,84 +67,26 @@ function Home() {
               {Car.map((car) => (
                 <div className="col-12 col-sm-9 col-md-5 col-lg-3">
                   <SimpleProductCard
+                    id={car.id}
                     productImg={car.directory}
+                    productView1={car.bigView.view1}
+                    productView2={car.bigView.view2}
                     productName={car.name}
-                    productThroughPrice={car.price_cfa}
-                    productPrice="6 000 000 000 FCFA"
+                    carId={car.id}
+                    productThroughPrice={car.price}
+                    productPrice={car.price_cfa}
                     reducePercent="50% off"
+                    model={car.model}
+                    brand={car.brand}
+                    transmission={car.transmission}
+                    engineType={car.engine_type}
+                    engineName={car.engine_name}
+                    to_60_mph={car.performance.to_60_mph}
+                    top_speed={car.performance.top_speed}
+                    style={car.style}
                   />
                 </div>
               ))}
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product1}
-                  productName="Toyota Corolla"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product2}
-                  productName="Mercedes AMG"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product3}
-                  productName="BMW"
-                  productPrice="6 000 000 000 FCFA"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product4}
-                  productName="Vont Va Gen"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product5}
-                  productName="Vont Va Gen"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product6}
-                  productName="Vont Va Gen"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product7}
-                  productName="Vont Va Gen"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
-              <div className="col-12 col-sm-9 col-md-5 col-lg-3">
-                <SimpleProductCard
-                  productImg={product8}
-                  productName="Vont Va Gen"
-                  productThroughPrice="3 000 000 000"
-                  productPrice="6 000 000 000 FCFA"
-                  reducePercent="50% off"
-                />
-              </div>
             </div>
           </div>
         </section>
@@ -225,7 +130,12 @@ function Home() {
               </div>
               <div className="col-12 col-md-2 d-none d-lg-block"></div>
               <div className="col-12 col-md-4 d-none d-lg-block">
-                <img src={ressource} alt="" className="img-fluid" />
+                <img
+                  src={ressource}
+                  loading="lazy"
+                  alt={ressource}
+                  className="img-fluid"
+                />
               </div>
             </div>
           </div>

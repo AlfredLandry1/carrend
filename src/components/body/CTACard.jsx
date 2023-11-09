@@ -14,6 +14,7 @@ function CTACard({ ctaBg }) {
       <div>
         <img
           src={ctaBg}
+          loading="lazy"
           alt="Call to action img"
           className="top-0 start-0 w-100 img-fluid"
         />

@@ -142,7 +142,12 @@ function About() {
               </div>
               <div className="col-12 col-md-2 d-none d-lg-block"></div>
               <div className="col-12 col-md-4 d-none d-lg-block">
-                <img src={ressource} alt="" className="img-fluid" />
+                <img
+                  src={ressource}
+                  loading="lazy"
+                  alt=""
+                  className="img-fluid"
+                />
               </div>
             </div>
           </div>

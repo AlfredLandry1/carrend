@@ -16,13 +16,63 @@ import { Link } from "react-router-dom";
  */
 
 function SimpleLovedProductCard({
-  productImg,
-  productName,
+  id,
   likeNbr,
+  productImg,
+  productView1,
+  productView2,
+  productName,
   productThroughPrice,
   productPrice,
   reducePercent,
+  model,
+  brand,
+  transmission,
+  engineType,
+  engineName,
+  to_60_mph,
+  top_speed,
+  style,
 }) {
+  const productDes = {
+    id: id,
+    productImg,
+    productView1: productView1,
+    productView2: productView2,
+    name: productName,
+    productThroughPrice: productThroughPrice,
+    productPrice: productPrice,
+    reducePercent: reducePercent,
+    model: model,
+    brand: brand,
+    transmission: transmission,
+    engineType: engineType,
+    engineName: engineName,
+    to_60_mph: to_60_mph,
+    top_speed: top_speed,
+    style,
+  };
+
+  let carts = [
+    {
+      ...productDes,
+      index: productDes.length + 1,
+    },
+  ];
+
+  let handleProductCart = () => {
+    if (!window.localStorage.getItem("cartProducts")) {
+      window.localStorage.setItem("cartProducts", JSON.stringify(carts));
+    } else {
+      carts = JSON.parse(window.localStorage.getItem("cartProducts"));
+      carts.push({
+        ...productDes,
+        index: carts.length + 1,
+      });
+      window.localStorage.setItem("cartProducts", JSON.stringify(carts));
+    }
+  };
+
   return (
     <>
       <motion.div
@@ -41,8 +91,21 @@ function SimpleLovedProductCard({
           </div>
         </div>
         <motion.div whileHover={{ scale: 0.9 }} className="card-body">
-          <Link to="/viewProduct">
-            <img src={productImg} alt={productName} className="img-fluid" />
+          <Link
+            to={`/viewProduct`}
+            onClick={() =>
+              window.localStorage.setItem(
+                "productDescription",
+                JSON.stringify(productDes)
+              )
+            }
+          >
+            <img
+              src={productImg}
+              alt={productName}
+              loading="lazy"
+              className="img-fluid"
+            />
           </Link>
         </motion.div>
         <div className="footer mb-2 px-3 d-flex flex-wrap justify-content-between align-items-end">
@@ -54,16 +117,17 @@ function SimpleLovedProductCard({
               className="text-truncate p-0 m-0 text-decoration-line-through"
               title={productThroughPrice}
             >
-              {productThroughPrice}
+              {productThroughPrice} fcfa
             </p>
             <h5 className="text-truncate text-bold" title={productPrice}>
-              {productPrice}
+              {productPrice} fcfa
             </h5>
           </div>
           <div className="mb-2">
             <motion.button
               whileHover={{ scale: 1.2 }}
               className="btn btn-light border-0 bg-white shadow"
+              onClick={handleProductCart}
             >
               <span className="fs-4 text-blue bi bi-cart-plus-fill"></span>
             </motion.button>

@@ -114,12 +114,19 @@ function Contact() {
           <div className="bg-black py-5">
             <div className="w-100 d-flex flex-wrap-reverse justify-content-around">
               <div className="col-md-7">
-                <img src={car} alt="porche" className="img-fluid" />
+                <img
+                  src={car}
+                  loading="lazy"
+                  alt="porche"
+                  className="img-fluid"
+                />
               </div>
               <div className="col-md-5">
                 <div className="container text-white">
-                    <h1 className="display-3 fw-bolder ">Contact us</h1>
-                    <p className="fw-light">Contact our technical team to find out more.</p>
+                  <h1 className="display-3 fw-bolder ">Contact us</h1>
+                  <p className="fw-light">
+                    Contact our technical team to find out more.
+                  </p>
                 </div>
               </div>
             </div>

@@ -21,7 +21,12 @@ function Banner({ bannerCar, bannerTitle, bannerSubtitle, bannerText }) {
         transition={{ duration: 5.3 }}
         className="position-absolute top-100 start-50 translate-middle d-none d-lg-block"
       >
-        <img src={bannerCar} alt="Carrend-banner-car" className="img-fluid" />
+        <img
+          src={bannerCar}
+          loading="lazy"
+          alt="Carrend-banner-car"
+          className="img-fluid"
+        />
       </motion.div>
       <div className="container-xxl">
         <div className="row">
@@ -52,7 +57,7 @@ function Banner({ bannerCar, bannerTitle, bannerSubtitle, bannerText }) {
                   }}
                 >
                   <Link
-                    to='/userPage'
+                    to="/userPage"
                     className="btn btn-light border-0 rounded-3 shadow"
                   >
                     <i className="text-black fs-4 bi bi-person-fill"></i>
@@ -60,7 +65,7 @@ function Banner({ bannerCar, bannerTitle, bannerSubtitle, bannerText }) {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }}>
                   <Link
-                    to='/catalog'
+                    to="/catalog"
                     className="bg-black btn btn-dark px-5 py-3 border-0 rounded-0 shadow-sm fw-bold"
                   >
                     SHOP NOW

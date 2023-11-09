@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+import newsletterAPI from "../../apis/NewsletterApi";
+
 const validationSchema = Yup.object().shape({
   firstName: Yup.string()
     .required("Enter your first name")
@@ -26,7 +28,16 @@ function Newsletter({ newsletterCar, newsletterMap }) {
 
   function handleSubmit(formValues, onSubmittingProps) {
     console.log(formValues);
-    onSubmittingProps.resetForm();
+    // onSubmittingProps.resetForm();
+    const newsletter = newsletterAPI(formValues);
+
+    if (newsletter) {
+      console.log("La newsletter a été envoyée avec succès.");
+    } else {
+      console.log(
+        "Une erreur s'est produite lors de l'envoi de la newsletter."
+      );
+    }
   }
 
   return (
@@ -35,7 +46,12 @@ function Newsletter({ newsletterCar, newsletterMap }) {
       <div className="row d-flex bg-light rounded-4 p-3">
         <div className="col-md-12 col-lg-5 d-flex gap-2 h-100">
           <div className="col-md-6">
-            <img src={newsletterCar} alt="Muscle car" className="img-fluid" />
+            <img
+              src={newsletterCar}
+              loading="lazy"
+              alt="Muscle car"
+              className="img-fluid"
+            />
           </div>
           <div className="col-md-6">
             <img
@@ -65,7 +81,7 @@ function Newsletter({ newsletterCar, newsletterMap }) {
                       htmlFor="firstName"
                       className="form-label fw-medium text-dark"
                     >
-                      Nom
+                      First name
                     </label>
                     <Field
                       id="firstName"
@@ -89,7 +105,7 @@ function Newsletter({ newsletterCar, newsletterMap }) {
                       htmlFor="lastName"
                       className="form-label fw-medium text-dark"
                     >
-                      P&eacute;nom
+                      Last name
                     </label>
                     <Field
                       id="lastName"
@@ -132,7 +148,7 @@ function Newsletter({ newsletterCar, newsletterMap }) {
                     />
                   </div>
                   <motion.button
-                  whileHover={{scale: 0.9}}
+                    whileHover={{ scale: 0.9 }}
                     type="submit"
                     disabled={!formik.isValid || formik.isSubmitting}
                     className="col-md-3 fs-5 fw-normal btn bg-black py-2 text-white"

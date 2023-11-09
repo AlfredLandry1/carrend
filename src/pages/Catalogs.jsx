@@ -10,16 +10,9 @@ import SimpleProductCard from "../components/body/SimpleProductCard";
 import CTACard from "../components/body/CTACard";
 import SimpleLovedProductCard from "../components/body/SimpleLovedProductCard";
 import Footer from "../components/footer/Footer";
+import Car from "../apis/CarsDescription";
 
 import ctaBg from "../assets/images/body/ctaBg.png";
-import product1 from "../assets/images/products/product1.png";
-import product2 from "../assets/images/products/product2.png";
-import product3 from "../assets/images/products/product3.png";
-import product4 from "../assets/images/products/product4.png";
-import product5 from "../assets/images/products/product5.png";
-import product6 from "../assets/images/products/product6.png";
-import product7 from "../assets/images/products/product7.png";
-import product8 from "../assets/images/products/product8.png";
 
 import newsletterCar from "../assets/images/body/newsletterCar.png";
 import newsletterMap from "../assets/images/body/newsletterMap.png";
@@ -57,76 +50,29 @@ function Catalogs() {
                 <h3 className="fw-bold text-black">View the products</h3>
                 <div className="pt-3 pb-5">
                   <div className="row d-flex justify-content-center justify-content-lg-start g-4">
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product1}
-                        productName="Toyota Corolla"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product2}
-                        productName="Mercedes AMG"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product3}
-                        productName="BMW"
-                        productPrice="6 000 000 000 FCFA"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product4}
-                        productName="Vont Va Gen"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product5}
-                        productName="Vont Va Gen"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product6}
-                        productName="Vont Va Gen"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product7}
-                        productName="Vont Va Gen"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleProductCard
-                        productImg={product8}
-                        productName="Vont Va Gen"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
+                    {Car.map((car) => (
+                      <div className="col-11 col-sm-8 col-md-6 col-lg-4">
+                        <SimpleProductCard
+                          id={car.id}
+                          productImg={car.directory}
+                          productView1={car.bigView.view1}
+                          productView2={car.bigView.view2}
+                          productName={car.name}
+                          carId={car.id}
+                          productThroughPrice={car.price}
+                          productPrice={car.price_cfa}
+                          reducePercent="50% off"
+                          model={car.model}
+                          brand={car.brand}
+                          transmission={car.transmission}
+                          engineType={car.engine_type}
+                          engineName={car.engine_name}
+                          to_60_mph={car.performance.to_60_mph}
+                          top_speed={car.performance.top_speed}
+                          style={car.style}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -134,64 +80,30 @@ function Catalogs() {
                 <h3 className="fw-bold text-black">Most loved product</h3>
                 <div className="pt-3 pb-5">
                   <div className="row d-flex justify-content-center justify-content-lg-start g-4">
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product1}
-                        productName="Toyota Corolla"
-                        likeNbr="10"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product2}
-                        productName="Mercedes AMG"
-                        likeNbr="15"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product3}
-                        productName="BMW"
-                        likeNbr="15 K"
-                        productPrice="6 000 000 000 FCFA"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product4}
-                        productName="Vont Va Gen"
-                        likeNbr="25"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product5}
-                        productName="Vont Va Gen"
-                        likeNbr="09"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product6}
-                        productName="Vont Va Gen"
-                        likeNbr="1 k"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
+                    {Car.map((car) => (
+                      <div className="col-11 col-sm-8 col-md-6 col-lg-4">
+                        <SimpleLovedProductCard
+                          id={car.id}
+                          productImg={car.directory}
+                          productView1={car.bigView.view1}
+                          productView2={car.bigView.view2}
+                          productName={car.name}
+                          likeNbr={car.like}
+                          carId={car.id}
+                          productThroughPrice={car.price}
+                          productPrice={car.price_cfa}
+                          reducePercent="50% off"
+                          model={car.model}
+                          brand={car.brand}
+                          transmission={car.transmission}
+                          engineType={car.engine_type}
+                          engineName={car.engine_name}
+                          to_60_mph={car.performance.to_60_mph}
+                          top_speed={car.performance.top_speed}
+                          style={car.style}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -199,56 +111,30 @@ function Catalogs() {
                 <h3 className="fw-bold text-black">Products in promotion</h3>
                 <div className="pt-3 pb-5">
                   <div className="row d-flex justify-content-center justify-content-lg-start g-4">
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product1}
-                        productName="Toyota Corolla"
-                        likeNbr="10"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product2}
-                        productName="Mercedes AMG"
-                        likeNbr="15"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product4}
-                        productName="Vont Va Gen"
-                        likeNbr="25"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product5}
-                        productName="Vont Va Gen"
-                        likeNbr="09"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
-                    <div className="col-11 col-sm-8 col-md-6 col-lg-4">
-                      <SimpleLovedProductCard
-                        productImg={product6}
-                        productName="Vont Va Gen"
-                        likeNbr="1 k"
-                        productThroughPrice="3 000 000 000"
-                        productPrice="6 000 000 000 FCFA"
-                        reducePercent="50% off"
-                      />
-                    </div>
+                    {Car.map((car) => (
+                      <div className="col-11 col-sm-8 col-md-6 col-lg-4">
+                        <SimpleLovedProductCard
+                          id={car.id}
+                          productImg={car.directory}
+                          productView1={car.bigView.view1}
+                          productView2={car.bigView.view2}
+                          productName={car.name}
+                          likeNbr={car.like}
+                          carId={car.id}
+                          productThroughPrice={car.price}
+                          productPrice={car.price_cfa}
+                          reducePercent="50% off"
+                          model={car.model}
+                          brand={car.brand}
+                          transmission={car.transmission}
+                          engineType={car.engine_type}
+                          engineName={car.engine_name}
+                          to_60_mph={car.performance.to_60_mph}
+                          top_speed={car.performance.top_speed}
+                          style={car.style}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

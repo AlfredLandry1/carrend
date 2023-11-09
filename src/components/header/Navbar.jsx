@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -10,10 +10,21 @@ import { Link } from "react-router-dom";
  */
 
 function Navbar({ activeLink }) {
+  let [qty, setQty] = useState(0);
+  // let qty = 0;
+  const productString = localStorage.getItem("cartProducts");
+  const products = productString ? JSON.parse(productString) : null;
+  if (!products) {
+    // setQty (qty + 0);
+  } else {
+    const products = JSON.parse(productString);
+    // setQty (qty + products.length);
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-white z-3">
       <div className="container">
-        <Link className="navbar-brand fs-1 fw-bold" to='/'>
+        <Link className="navbar-brand fs-1 fw-bold" to="/">
           Carrend
         </Link>
         <motion.div
@@ -26,12 +37,12 @@ function Navbar({ activeLink }) {
           }}
         >
           <Link
-            to='/cart'
+            to="/cart"
             className="bg-white btn btn-light border-0 rounded-pill shadow-sm"
           >
             <i className="text-black fs-4 bi bi-cart-fill"></i>
             <span className="badge ms-2 fw-medium text-danger border-circle">
-              0
+            {qty = 2}
             </span>
           </Link>
         </motion.div>
@@ -63,7 +74,7 @@ function Navbar({ activeLink }) {
                 className={`nav-link ${
                   activeLink === "catalogs" ? "fw-medium active" : ""
                 }`}
-                to='/catalog'
+                to="/catalog"
               >
                 Catalogs
               </Link>
@@ -73,7 +84,7 @@ function Navbar({ activeLink }) {
                 className={`nav-link ${
                   activeLink === "about" ? "fw-medium active" : ""
                 }`}
-                to='/about'
+                to="/about"
               >
                 About us
               </Link>
@@ -83,7 +94,7 @@ function Navbar({ activeLink }) {
                 className={`nav-link ${
                   activeLink === "contact" ? "fw-medium active" : ""
                 }`}
-                to='/contact'
+                to="/contact"
               >
                 Contacts
               </Link>
