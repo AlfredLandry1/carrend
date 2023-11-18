@@ -1,3 +1,43 @@
+# About the project CARREND
+
+# E-commerce web application with React.js & Django REST FRAMEWORK
+
+## Introduction
+
+This project is about creating an e-commerce web application with React.js. The application is currently 70% complete.
+
+## Features
+
+The main features of the application are as follows:
+
+* Display a list of products
+* Display product details
+* Add a product to the cart
+* Validate the cart
+
+## Technologies
+
+The application is built using the following technologies:
+
+* React.js
+* JSX
+* Axios
+* Bootstrap
+* Django REST Framework
+* . . .
+
+## Contributions
+
+Any contribution is welcome, especially for the integration of the backend and the addition of new features.
+
+## Links
+
+* [GitHub repository](https://github.com/AlfredLandry1/carrend/tree/v1.0)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
